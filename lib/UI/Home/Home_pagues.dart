@@ -25,7 +25,7 @@ class _HomePaguesState extends State<HomePagues> {
       case 2:
       return AutomovilPague();
       case 3:
-      return LugarEstacionamiento();
+      return ApartadoLugar();
       case 4: 
       return AyudaPagues();
       case 5:

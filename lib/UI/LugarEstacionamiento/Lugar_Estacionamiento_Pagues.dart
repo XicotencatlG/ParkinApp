@@ -1,14 +1,75 @@
 import 'package:flutter/material.dart';
-class LugarEstacionamiento extends StatefulWidget {
-  @override
-  _LugarEstacionamientoState createState() => _LugarEstacionamientoState();
-}
+//List of Cards with size 
 
-class _LugarEstacionamientoState extends State<LugarEstacionamiento> {
+
+class ApartadoLugar extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       
+      body:  Container(
+       child: GridView.count(
+         scrollDirection: Axis.vertical,
+         mainAxisSpacing: 8,
+         childAspectRatio: 1.2,
+         crossAxisCount: 4,
+         
+         children: [
+
+           Card(
+            
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey
+           ),
+           Card(
+             color: Colors.blueGrey,
+           )
+         ],
+       ),
+       
+      ),
     );
   }
 }

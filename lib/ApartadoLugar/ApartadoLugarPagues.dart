@@ -7,6 +7,7 @@ class AparadoPagues extends StatefulWidget {
 class _AparadoPaguesState extends State<AparadoPagues> {
   var _menuApartadoES=['Edificio A', 'Edificio B', ];
   String _vistaMenuApartado = 'Selecciona';
+  var _menuLugares=['A1','A2','A3','A4','A5','A6','A7' ];
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
@@ -24,7 +25,7 @@ class _AparadoPaguesState extends State<AparadoPagues> {
           progress: 0.5,
           child: Center(
             child: Text(
-              'Tiempo restante de Apartado',
+              'Tiempo restante de Apartado 10 Min',
               style: TextStyle(color: Colors.green, fontSize: 15 , fontWeight: FontWeight.bold),
               textAlign: TextAlign.center,
             ),
@@ -54,9 +55,30 @@ ListTile(
     hint: Text(_vistaMenuApartado),
   ),
 ),
+ListTile(
+  title: Text('Luagres'),
+  trailing: DropdownButton(
+    items: _menuLugares.map((String c){
+      return DropdownMenuItem(
+        value: c,
+        child: Text(c),);
 
+    }).toList(),
+    onChanged: (_value)=>{
+      setState((){
+        _vistaMenuApartado = _value;
+      })
+    },
+    hint: Text(_vistaMenuApartado),
+  ),
+),
 
-      
+      RaisedButton(
+        color: Colors.red,
+            child: Text('Apartar Lugar', style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        onPressed: (){},)
                 ],),
               ),
             ),

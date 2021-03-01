@@ -25,12 +25,12 @@ class _AutomovilPagueState extends State<AutomovilPague> {
           onTap: (){
             Navigator.push(context, MaterialPageRoute(builder: (context) => ActualizarAuto()));
           }, 
-          label: 'Actualizar', 
+          label: 'Agregar', 
           labelStyle: 
               TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
           labelBackgroundColor: Colors.yellow, 
         ), 
-        SpeedDialChild( 
+        /*SpeedDialChild( 
           child: Icon(Icons.create, color: Colors.white), 
           backgroundColor: Colors.blue, 
           onTap: () => print('Pressed Write'), 
@@ -38,8 +38,8 @@ class _AutomovilPagueState extends State<AutomovilPague> {
           labelStyle: 
               TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
           labelBackgroundColor: Colors.blue, 
-        ), 
-        SpeedDialChild( 
+        ), */
+        /*SpeedDialChild( 
           child: Icon(Icons.get_app_outlined, color: Colors.white), 
           backgroundColor: Colors.green, 
           onTap: () => print('Pressed Code'), 
@@ -47,7 +47,7 @@ class _AutomovilPagueState extends State<AutomovilPague> {
           labelStyle: 
               TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
           labelBackgroundColor: Colors.purple, 
-        ), 
+        ), */
       ], 
     ); 
   } 
