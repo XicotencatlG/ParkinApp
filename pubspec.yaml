@@ -23,12 +23,17 @@ dependencies:
   firebase_storage:
   google_sign_in: 
   flutter_speed_dial:
-  image_picker:
-  flutter_staggered_grid_view:
+
+  
+    
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
+flutter_icons:
+  image_path: 'assets/logo_inicio.png'
+  android: true
+  ios: true
 
 flutter:
 

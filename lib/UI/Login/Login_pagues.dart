@@ -50,6 +50,7 @@ class _LoginPaguesState extends State<LoginPagues> {
   }
 
   Widget _signInButton() {
+    // ignore: deprecated_member_use
     return OutlineButton(
       //splashColor: Colors.red,
       onPressed: () {

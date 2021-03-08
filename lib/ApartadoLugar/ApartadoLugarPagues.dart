@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 class AparadoPagues extends StatefulWidget {
   @override
   _AparadoPaguesState createState() => _AparadoPaguesState();
-}
+} 
 
 class _AparadoPaguesState extends State<AparadoPagues> {
   var _menuApartadoES=['Edificio A', 'Edificio B', ];
@@ -11,6 +11,7 @@ class _AparadoPaguesState extends State<AparadoPagues> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Stack(
+        
         children: [
           SafeArea(
             child: SingleChildScrollView(
@@ -73,6 +74,7 @@ ListTile(
   ),
 ),
 
+      // ignore: deprecated_member_use
       RaisedButton(
         color: Colors.red,
             child: Text('Apartar Lugar', style: TextStyle(color: Colors.white, fontSize: 20),

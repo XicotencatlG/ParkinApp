@@ -1,13 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_speed_dial/flutter_speed_dial.dart';
-import 'package:parkingapp/Automovil/Actualizar_Auto_pagues.dart';
-class PruebaAuto extends StatefulWidget {
+import 'package:parkingapp/Automovil/Agregar_Auto.dart';
+import 'package:parkingapp/Automovil/Update_Auto.dart';
+import 'package:parkingapp/util/sing_in.dart';
+class AutomovilPague extends StatefulWidget {
   @override
-  _PruebaAutoState createState() => _PruebaAutoState();
+  _AutomovilPagueState createState() => _AutomovilPagueState();
 }
-
-class _PruebaAutoState extends State<PruebaAuto> {
+class _AutomovilPagueState extends State<AutomovilPague> {
   SpeedDial buildSpeedDial() { 
     return SpeedDial( 
       animatedIcon: AnimatedIcons.menu_close, 
@@ -20,42 +21,31 @@ class _PruebaAutoState extends State<PruebaAuto> {
           child: Icon(Icons.upgrade, color: Colors.white), 
           backgroundColor: Colors.yellow, 
           onTap: (){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => ActualizarAuto()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => AgregarAuto()));
           }, 
-          label: 'Actualizar', 
-          labelStyle: 
-              TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
-          labelBackgroundColor: Colors.yellow, 
-        ), 
-        SpeedDialChild( 
-          child: Icon(Icons.create, color: Colors.white), 
-          backgroundColor: Colors.blue, 
-          onTap: () => print('Pressed Write'), 
           label: 'Agregar', 
           labelStyle: 
               TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
-          labelBackgroundColor: Colors.blue, 
-        ), 
-        SpeedDialChild( 
-          child: Icon(Icons.get_app_outlined, color: Colors.white), 
-          backgroundColor: Colors.green, 
-          onTap: () => print('Pressed Code'), 
-          label: 'Eliminar', 
-          labelStyle: 
-              TextStyle(fontWeight: FontWeight.w500, color: Colors.white), 
-          labelBackgroundColor: Colors.purple, 
+          labelBackgroundColor: Colors.yellow, 
         ), 
       ], 
     ); 
   } 
   
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: StreamBuilder(
+// ignore: deprecated_member_use
+  
 
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      
+      body: StreamBuilder(
+        
+    
         // ignore: deprecated_member_use
-        stream: Firestore.instance.collection('DatosAuto').snapshots(),
+        stream: Firestore.instance.collection(name).snapshots(),
         builder: (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot){
+          if (!snapshot.hasData) return CircularProgressIndicator();
           return ListView.builder(
             // ignore: deprecated_member_use
             itemCount: snapshot.data.documents.length,
@@ -63,26 +53,28 @@ class _PruebaAutoState extends State<PruebaAuto> {
               return Stack(
                 
                 children: <Widget>[
-                        ClipPath(
-        clipper: Myclipper(),
-        child: Container(
-          height: 300,
-          decoration: BoxDecoration(color: Colors.red),
-        )
-        ),
-                  //Divider(height: 20, color: Colors.red,),
 
 
-
-      SingleChildScrollView(
-        child: Center(
-          child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 900),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
+      Center(
+        child: ConstrainedBox(constraints: BoxConstraints(maxWidth: 900),
+        child: Column(
+        children: [
+          
+        Card(
+          
+          child: Container(
             
-          SizedBox(height: 50,),
+            child: Row(
+              
+              children: [
+      
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+
+                            //SizedBox(height: ),
           Row(children: [
-            SizedBox(width: 50,),
+            SizedBox(width: 25,),
             Text('Marca:', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 40,),
              SizedBox(width: 50,),
@@ -91,7 +83,7 @@ class _PruebaAutoState extends State<PruebaAuto> {
 
           ],),
            Row(children: [
-            SizedBox(width: 50,),
+            SizedBox(width: 25,),
             Text('Tipo:', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 40,),
              SizedBox(width: 50,),
@@ -99,7 +91,7 @@ class _PruebaAutoState extends State<PruebaAuto> {
             Text(snapshot.data.documents.elementAt(index)['Tipo'], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),)
           ],),
           Row(children: [
-            SizedBox(width: 50,),
+            SizedBox(width: 25,),
             Text('Color:', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 40,),
              SizedBox(width: 50,),
@@ -107,7 +99,7 @@ class _PruebaAutoState extends State<PruebaAuto> {
             Text(snapshot.data.documents.elementAt(index)['Color'], style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
           ],),
            Row(children: [
-            SizedBox(width: 50,),
+            SizedBox(width: 25,),
             Text('Placas:', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 40,),
              SizedBox(width: 50,),
@@ -116,7 +108,7 @@ class _PruebaAutoState extends State<PruebaAuto> {
 
           ],),
            Row(children: [
-            SizedBox(width: 50,),
+            SizedBox(width: 25,),
             Text('NIV:', style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
             SizedBox(height: 40,),
              SizedBox(width: 50,),
@@ -125,18 +117,64 @@ class _PruebaAutoState extends State<PruebaAuto> {
 
           ],
           ),
-            
-            SizedBox(height: 45,),
-          Image.asset('assets/nissan.jpg', height: 200, width: 200,),
+              
+                                                       Column(
+                                                          crossAxisAlignment: CrossAxisAlignment.end,
+                                             children: [
+                                                 SizedBox( width: 350,),
+                                               Row(
+                                                 
+                                                 children: [
+                                                   
+           
+            IconButton(
+            icon: Icon(Icons.edit,color: Colors.red,),
+            onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context) => UpdateAuto()));
 
-          ],
-          
-          
-          )
-          
-          ,)
-           ),
-      ),
+            },
+            ),
+            SizedBox(width: 20,),
+                        IconButton(
+            icon: Icon(Icons.delete_forever,color: Colors.red,),
+            onPressed: (){
+                            // ignore: deprecated_member_use
+              Firestore.instance.runTransaction((Transaction myTrans)
+              async{
+             
+                // ignore: await_only_futures
+                // ignore: deprecated_member_use
+                // ignore: await_only_futures
+                await myTrans.delete(snapshot.data.documents[index].reference);
+              
+              }
+              );
+            },
+            ),
+          ],),
+                                             ],
+                                           ),
+                  ],),
+                
+
+                      
+              
+
+                   
+              ],
+              
+              ),
+
+        
+          ),
+        ),
+        ],
+        
+        
+        )
+        
+        ,)
+         ),
 
                 ],
               );
@@ -149,27 +187,7 @@ class _PruebaAutoState extends State<PruebaAuto> {
     );
     
   }
-}
-
-class Myclipper extends CustomClipper<Path>{
-  @override
-  Path getClip(Size size) {
-    Path path = Path();
-    path.lineTo(0, size.height);
-    path.quadraticBezierTo(size.width/4, size.height
- - 40, size.width/2, size.height-20);
-    path.quadraticBezierTo(3/4*size.width, size.height,
- size.width, size.height-30);
-    path.lineTo(size.width, 0);
-    
-
-    return path;
-  }
-  @override
-  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    return true;
-  }
   
-
+ 
 }
+

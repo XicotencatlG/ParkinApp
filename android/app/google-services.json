@@ -1,41 +1,41 @@
 {
   "project_info": {
-    "project_number": "297439684641",
-    "project_id": "parkingupvt-6e08c",
-    "storage_bucket": "parkingupvt-6e08c.appspot.com"
+    "project_number": "846905189543",
+    "project_id": "parkinapp-c6969",
+    "storage_bucket": "parkinapp-c6969.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:297439684641:android:1c1c293472edccf12adb60",
+        "mobilesdk_app_id": "1:846905189543:android:09ae63e88b2e413c1aa782",
         "android_client_info": {
           "package_name": "com.example.parkingapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "297439684641-4dt0t267docpl5b0udt5urkbikju36bn.apps.googleusercontent.com",
+          "client_id": "846905189543-910deejovd7c4t1odafuo084o5p6d0te.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.parkingapp",
-            "certificate_hash": "2dce46d31b5ce1c48771f95d20314f483bb6946b"
+            "certificate_hash": "08f01f7ccd164f04e061a5f18b336c67bdea517d"
           }
         },
         {
-          "client_id": "297439684641-tpfhjebd29j7ftif6hipbpfof1tovj9g.apps.googleusercontent.com",
+          "client_id": "846905189543-erblav1imijq97mtu9pg59q7jed2e2ki.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyA9mVciuDVlvHfKWvT8OcOFA7-nkmnjuJw"
+          "current_key": "AIzaSyB6kcht-miYI3SBiPO4LY0l2f9ATJKQCjc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "297439684641-tpfhjebd29j7ftif6hipbpfof1tovj9g.apps.googleusercontent.com",
+              "client_id": "846905189543-erblav1imijq97mtu9pg59q7jed2e2ki.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

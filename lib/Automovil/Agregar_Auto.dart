@@ -1,14 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:parkingapp/UI/Home/Home_pagues.dart';
 import 'package:parkingapp/util/sing_in.dart';
 
-class ActualizarAuto extends StatefulWidget {
+class AgregarAuto extends StatefulWidget {
   @override
-  _ActualizarAutoState createState() => _ActualizarAutoState();
+  _AgregarAutoState createState() => _AgregarAutoState();
 }
 
-class _ActualizarAutoState extends State<ActualizarAuto> {
+class _AgregarAutoState extends State<AgregarAuto> {
 
   var _menuTipo=['Hatchback ','SUV','Deportivos','Furgoneta','Seda','Van','Pick Up','Camioneta'];
   String _vistaTipo = 'Selecione un modelo';
@@ -123,6 +122,7 @@ final nivController = TextEditingController();
                                 Row(
                 children: [
                   SizedBox(height: 80, width: 60,),
+                  // ignore: deprecated_member_use
                   RaisedButton(
                   color: Colors.red,
             child: Text('Agregar Auto', style: TextStyle(color: Colors.white, fontSize: 20),
@@ -130,7 +130,7 @@ final nivController = TextEditingController();
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                     onPressed: (){
                       add();
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => HomePagues()));
+                      Navigator.pop(context);
                     },),
                 ],
               )
@@ -165,6 +165,10 @@ void add(){
   });
 }
 
+
+
+
+
 void getData(){
   // ignore: deprecated_member_use
   databaseReference.collection(name).getDocuments().then((QuerySnapshot snapshot){
@@ -172,7 +176,4 @@ void getData(){
     snapshot.documents.forEach((f)=>print('${f.data}'));
   });
 }
-
 }
-
-

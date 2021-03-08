@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 //List of Cards with size 
 
 
-class ApartadoLugar extends StatelessWidget {
+class LugaresLibres extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {

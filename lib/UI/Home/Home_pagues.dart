@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:parkingapp/ApartadoLugar/ApartadoLugarPagues.dart';
-import 'package:parkingapp/Automovil/Automovil_pagues.dart';
-import 'package:parkingapp/Prueba/Pruebas.dart';
-import 'package:parkingapp/UI/Ayuda/Ayuda_Pagues.dart';
+import 'package:parkingapp/Automovil/AutoPagues.dart';
 import 'package:parkingapp/UI/Login/Login_pagues.dart';
 import 'package:parkingapp/UI/LugarEstacionamiento/Lugar_Estacionamiento_Pagues.dart';
 import 'package:parkingapp/UI/Perfil/Perfil_pagues.dart';
@@ -15,23 +13,19 @@ class HomePagues extends StatefulWidget {
 
 class _HomePaguesState extends State<HomePagues> {
 
-  int _select = 6;
+  int _select = 2;
   _getDrawerItemWidget(int mostrar) {
     switch (mostrar) {
       case 0: 
-        return ;
-      case 1: 
         return PerfilPagues();
+      case 1: 
+        return AutomovilPague();
       case 2:
-      return AutomovilPague();
+      return LugaresLibres();
       case 3:
-      return ApartadoLugar();
-      case 4: 
-      return AyudaPagues();
-      case 5:
-      return Preubas();
-      case 6:
       return AparadoPagues();
+      case 4: 
+      return null;
     }
   }
    _onSelect(int mostrar) {
@@ -75,7 +69,7 @@ appBar: AppBar(backgroundColor: Colors.red, actions: <Widget>[]),
                     fontWeight: FontWeight.w800,
                     color: Colors.red)),
             onTap: () {
-              _onSelect(1);
+              _onSelect(0);
             },
           ),
            ListTile(
@@ -87,7 +81,7 @@ appBar: AppBar(backgroundColor: Colors.red, actions: <Widget>[]),
                     fontWeight: FontWeight.w800,
                     color: Colors.red)),
             onTap: () {
-              _onSelect(2);
+              _onSelect(1);
             },
           ),
           ListTile(
@@ -99,7 +93,7 @@ appBar: AppBar(backgroundColor: Colors.red, actions: <Widget>[]),
                     fontWeight: FontWeight.w800,
                     color: Colors.red)),
             onTap: () {
-              _onSelect(3);
+              _onSelect(2);
             },
           ),
           ListTile(
@@ -111,7 +105,7 @@ appBar: AppBar(backgroundColor: Colors.red, actions: <Widget>[]),
                     fontWeight: FontWeight.w800,
                     color: Colors.red)),
             onTap: () {
-              _onSelect(6);
+              _onSelect(3);
             },
           ),
           ListTile(
